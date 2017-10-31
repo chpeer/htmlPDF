@@ -10,13 +10,8 @@ import (
 var pdf *gofpdf.Fpdf
 
 func Generate(html string, css string, out string) {
-	xmlFile, err := ioutil.ReadFile(html)
-	if err != nil {
-		return
-	}
-
 	//parse html to Node tree
-	n := ParseHtml(string(xmlFile))
+	n := ParseHtml(string(html))
 	fmt.Println("\x1b[41m\x1b[1mprint Node\x1b[0m")
 	n.print(0)
 	fmt.Println("\x1b[41m\x1b[1mend print Node\x1b[0m\n")
