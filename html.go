@@ -92,7 +92,7 @@ func (p *Parser) parseText() *Node {
 
 //Parse a tag or attribute name
 func (p *Parser) parseTagName() string {
-	reg := regexp.MustCompile("[a-zA-Z0-9]")
+	reg := regexp.MustCompile("[!a-zA-Z0-9]")
 	f := func(char string) bool {
 		return reg.MatchString(char)
 	}
