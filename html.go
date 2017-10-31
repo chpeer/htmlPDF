@@ -121,9 +121,11 @@ func (p *Parser) parseAttribute() (string, string) {
 	delimiter := p.consumeChar()
 
 	if delimiter != "=" {
-		panic(fmt.Sprintf("%v was not =", delimiter))
+		//panic(fmt.Sprintf("%v was not =", delimiter))
+		value := ""
+	} else {
+	        value := p.parseAttributeValue()
 	}
-	value := p.parseAttributeValue()
 	return name, value
 }
 
